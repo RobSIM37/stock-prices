@@ -5,7 +5,7 @@ function best(arr) {
     // search for the solution.
     let continueLoop = true;
 
-    while (arr.length>1 && continueLoop) {
+    while (arr.length > 1 && continueLoop) {
         if (arr[1] <= arr[0]) {
             arr.shift();
         } else {
@@ -15,7 +15,7 @@ function best(arr) {
 
     continueLoop = true;
 
-    while (arr.length>1 && continueLoop) {
+    while (arr.length > 1 && continueLoop) {
         if (arr[arr.length - 2] >= arr[arr.length -1]) {
             arr.pop()
         } else {
@@ -28,7 +28,7 @@ function best(arr) {
         for (let i = 0; i < arr.length - 1; i++) { // check all but the last number. It will be compared as a 'Sell' in the last loop
 
             // In this iteration of the loop, the best selling point is the biggest number in the remaining portion of the array
-            const thisBestSell = arr.slice(i+1,arr[arr.length]).reduce((big, current) => Math.max(big, current));
+            const thisBestSell = arr.slice(i+1,arr.length).reduce((big, current) => Math.max(big, current));
             const thisBuy = arr[i]; // the number being considered for the best buy point
     
             if (thisBestSell - thisBuy > bestProfit) {
