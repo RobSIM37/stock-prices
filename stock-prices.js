@@ -6,18 +6,18 @@ function best(arr) {
     let continueLoop = true;
 
     while (arr.length > 1 && continueLoop) {
-        if (arr[1] <= arr[0]) {
-            arr.shift();
+        if (arr[arr.length - 2] >= arr[arr.length -1]) {
+            arr.pop()
         } else {
             continueLoop = false;
         }
     }
 
     continueLoop = true;
-
+    
     while (arr.length > 1 && continueLoop) {
-        if (arr[arr.length - 2] >= arr[arr.length -1]) {
-            arr.pop()
+        if (arr[1] <= arr[0]) {
+            arr.shift();
         } else {
             continueLoop = false;
         }
